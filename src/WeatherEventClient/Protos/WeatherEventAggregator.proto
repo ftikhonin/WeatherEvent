@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package WeatherEventAggregator;
+
+option csharp_namespace = "WeatherEventAggregator";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+service WeatherEventAggregator{
+  rpc SetAggregationPeriod(AggregationPeriodRequest) returns (SetResponse);
+  rpc SetSensorIds(SensorRequest) returns (SetResponse);
+  rpc AverageTemperature(AggregationRequest) returns (AverageTemperatureResponse);
+  rpc AverageHumidity(AggregationRequest) returns (AverageHumidityResponse);
+  rpc MaxMinCarbonDioxide(AggregationRequest) returns (MaxMinCarbonDioxideResponse);
+  rpc DiagnosticHandler(google.protobuf.Empty) returns (DiagnosticHandlerResponse);
+}
+
+message AggregationPeriodRequest{
+  int32 AggregationPeriod = 1;
+}
+
+message AggregationRequest{
+  google.protobuf.Timestamp DateFrom = 1;
+  int32 Minutes = 2;
+}
+
+message SensorRequest{
+  repeated int64 sensor_ids = 1;
+}
+message SetResponse{
+  string Msg = 1;
+}
+message AverageTemperatureResponse {
+  message AverageTemperature{
+    int64 SensorId = 1;
+    double AvgTemperature = 2;
+  }
+  repeated AverageTemperature results = 1;
+}
+
+message AverageHumidityResponse{
+  message AverageHumidity{
+    int64 SensorId = 1;
+    double AvgHumidity = 2;
+  }
+  repeated AverageHumidity results = 1;
+}
+message MaxMinCarbonDioxideResponse{
+  message MaxMinCarbonDioxide{
+    int64 SensorId = 1;
+    int64 MaxCarbonDioxide = 2;
+    int64 MinCarbonDioxide = 3;
+  }
+  repeated MaxMinCarbonDioxide results = 1;
+}
+
+message DiagnosticHandlerResponse{
+  message DiagnosticHandler{
+    int64 id = 1;
+    int64 SensorId = 2;
+    double AvgTemperature = 4;
+    double AvgHumidity = 5;
+    int64 MaxCarbonDioxide = 6;
+    int64 MinCarbonDioxide = 7;
+    google.protobuf.Timestamp CreatedAt = 8;
+  }
+  repeated DiagnosticHandler results = 1;
+}

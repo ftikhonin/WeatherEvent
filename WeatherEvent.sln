@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CB9FFACA-D8AF-45D2-9A07-9698CA28C9FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{BD10F9BB-E489-4AAF-B31D-13553697A7AC}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherEventGenerator", "src\WeatherEventGenerator\WeatherEventGenerator.csproj", "{61B16829-E118-493A-8D52-71A29159E8EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherEventClient", "src\WeatherEventClient\WeatherEventClient.csproj", "{AF804EEA-5557-4558-BACE-25A9E2F06787}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherEventGenerator.BL", "src\WeatherEventGenerator.BL\WeatherEventGenerator.BL.csproj", "{C0AA971E-80C4-44D1-952F-610C85590F3B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{61B16829-E118-493A-8D52-71A29159E8EC} = {CB9FFACA-D8AF-45D2-9A07-9698CA28C9FA}
+		{AF804EEA-5557-4558-BACE-25A9E2F06787} = {CB9FFACA-D8AF-45D2-9A07-9698CA28C9FA}
+		{C0AA971E-80C4-44D1-952F-610C85590F3B} = {CB9FFACA-D8AF-45D2-9A07-9698CA28C9FA}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61B16829-E118-493A-8D52-71A29159E8EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61B16829-E118-493A-8D52-71A29159E8EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61B16829-E118-493A-8D52-71A29159E8EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61B16829-E118-493A-8D52-71A29159E8EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF804EEA-5557-4558-BACE-25A9E2F06787}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF804EEA-5557-4558-BACE-25A9E2F06787}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF804EEA-5557-4558-BACE-25A9E2F06787}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF804EEA-5557-4558-BACE-25A9E2F06787}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0AA971E-80C4-44D1-952F-610C85590F3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0AA971E-80C4-44D1-952F-610C85590F3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0AA971E-80C4-44D1-952F-610C85590F3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0AA971E-80C4-44D1-952F-610C85590F3B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
